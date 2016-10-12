@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <title>DvdWebStore</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular/angular-route.min.js"></script>
+    <script src="libs/angular/angular-resource.min.js"></script>
+    
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/movie/movie.module.js"></script>
+    <script src="app/core/movie/movie.service.js"></script>
+    <script src="app/core/rental/rental.module.js"></script>
+    <script src="app/core/rental/rental.service.js"></script>
+    <script src="app/core/client/client.module.js"></script>
+    <script src="app/core/client/client.service.js"></script>
+    <script src="app/add-movie/add-movie.module.js"></script>
+    <script src="app/add-movie/add-movie.component.js"></script>
+    <script src="app/add-client/add-client.module.js"></script>
+    <script src="app/add-client/add-client.component.js"></script>
+    <script src="app/rent-movie/rent-movie.module.js"></script>
+    <script src="app/rent-movie/rent-movie.component.js"></script>
+    <script src="app/return-movie/return-movie.module.js"></script>
+    <script src="app/return-movie/return-movie.component.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navabr-collapse" aria-expanded="False">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">DvdStore</a>
+        </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/#!/rent-movie">Rent Movie</a>
+            </li>
+            <li>
+                <a href="/#!/return-movie">Return Movie</a>
+            </li>
+            <li>
+                <a href="/#!/add-movie">Add new Movie</a>
+            </li>
+            <li>
+                <a href="/#!/add-client">Add new client</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div ng-view></div>
+</body>
+</html>

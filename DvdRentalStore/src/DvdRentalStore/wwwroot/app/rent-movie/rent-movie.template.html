@@ -1,0 +1,39 @@
+﻿<div class="container-fluid">
+    <button type="submit" class="btn btn-primary" ng-click="$ctrl.save()" ng-disabled="!$ctrl.isValid()">Save</button>
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="client">Client</label>
+            <table id="client" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="client in $ctrl.clients track by client.id" ng-click="$ctrl.toggleClient(client)" ng-class="client === $ctrl.model.client ? ['active', 'info'] : ''">
+                    <td>{{client.name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <label for="movie">Movie</label>
+            <table id="movie" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Director</th>
+                    <th>Available copies</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-disabled="item.availableCopies < 1" ng-repeat="item in $ctrl.movies track by item.movie.id" ng-click="$ctrl.toggleMovie(item)" ng-class="item.movie === $ctrl.model.movie ? ['active', 'info'] : ''">
+                    <td>{{item.movie.title}}</td>
+                    <td>{{item.movie.director}}</td>
+                    <td>{{item.availableCopies}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

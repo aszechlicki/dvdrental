@@ -1,0 +1,19 @@
+﻿<div>
+    <button type="submit" class="btn btn-primary" ng-click="$ctrl.remove()" ng-disabled="!$ctrl.rental">Remove</button>
+    <table id="movie" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Client name</th>
+                <th>Title</th>
+                <th>Rental date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in $ctrl.rentals track by item.rental.id" ng-click="$ctrl.toggleRental(item.rental)" ng-class="item.rental === $ctrl.rental ? ['active', 'info'] : ''">
+                <td>{{item.client.name}}</td>
+                <td>{{item.dvd.title}}</td>
+                <td>{{item.rental.rentalTime}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
